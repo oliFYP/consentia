@@ -1,32 +1,43 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Shield, CheckCircle, Clock, Users, FileCheck, Phone, Calendar } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  Shield,
+  CheckCircle,
+  Clock,
+  Users,
+  FileCheck,
+  Phone,
+  Calendar,
+} from "lucide-react";
 
 const Services = () => {
   const services = [
     {
       icon: <Shield className="h-12 w-12" />,
       title: "Outsourced DPO (Data Protection Officer)",
-      price: "From £2,500/month",
+      price: "From £2,200/month",
       duration: "3 days of work per month",
-      description: "A dedicated GDPR expert managing your compliance and advising your teams.",
-      ideal: "Ideal for startups, SMEs, digital agencies, and growing companies.",
+      description:
+        "A dedicated GDPR expert managing your compliance and advising your teams.",
+      ideal:
+        "Ideal for startups, SMEs, digital agencies, and growing companies.",
       features: [
         "Dedicated GDPR expert assigned to your business",
         "Monthly compliance monitoring and reporting",
         "Staff training and guidance",
         "Policy development and updates",
         "Incident response support",
-        "Regular compliance assessments"
+        "Regular compliance assessments",
       ],
-      featured: true
+      featured: true,
     },
     {
       icon: <FileCheck className="h-12 w-12" />,
       title: "GDPR Compliance Audit",
       price: "Short engagement",
       duration: "5 to 10 days",
-      description: "Full review of your practices + actionable compliance roadmap.",
+      description:
+        "Full review of your practices + actionable compliance roadmap.",
       ideal: "Identify risks and priorities with clarity.",
       features: [
         "Comprehensive data protection assessment",
@@ -34,16 +45,17 @@ const Services = () => {
         "Risk assessment and prioritization",
         "Detailed compliance roadmap",
         "Implementation timeline",
-        "Follow-up recommendations"
+        "Follow-up recommendations",
       ],
-      featured: false
+      featured: false,
     },
     {
       icon: <Clock className="h-12 w-12" />,
       title: "On-Demand GDPR Support",
-      price: "From £500/day",
+      price: "From £450/day",
       duration: "Flexible scheduling",
-      description: "Legal document reviews, project-specific advice, incident handling.",
+      description:
+        "Legal document reviews, project-specific advice, incident handling.",
       ideal: "No long-term commitment.",
       features: [
         "Document and policy reviews",
@@ -51,10 +63,10 @@ const Services = () => {
         "Data breach incident response",
         "Privacy impact assessments",
         "Vendor agreement reviews",
-        "Ad-hoc compliance questions"
+        "Ad-hoc compliance questions",
       ],
-      featured: false
-    }
+      featured: false,
+    },
   ];
 
   return (
@@ -66,7 +78,9 @@ const Services = () => {
             Our GDPR & Data Protection Services
           </h1>
           <p className="text-xl lg:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
-            At Consentia Data Protection, we offer tailored compliance solutions to help you stay aligned, secure, and trustworthy — without legal complexity.
+            At Consentia Data Protection, we offer tailored compliance solutions
+            to help you stay aligned, secure, and trustworthy — without legal
+            complexity.
           </p>
         </div>
       </section>
@@ -76,10 +90,10 @@ const Services = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className={`relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden ${
-                  service.featured ? 'ring-2 ring-blue-500' : ''
+                  service.featured ? "ring-2 ring-blue-500" : ""
                 }`}
               >
                 {service.featured && (
@@ -87,16 +101,14 @@ const Services = () => {
                     Most Popular
                   </div>
                 )}
-                
-                <div className={`p-8 ${service.featured ? 'pt-12' : ''}`}>
-                  <div className="text-blue-600 mb-6">
-                    {service.icon}
-                  </div>
-                  
+
+                <div className={`p-8 ${service.featured ? "pt-12" : ""}`}>
+                  <div className="text-blue-600 mb-6">{service.icon}</div>
+
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     {service.title}
                   </h3>
-                  
+
                   <div className="mb-6">
                     <div className="text-3xl font-bold text-blue-600 mb-1">
                       {service.price}
@@ -105,30 +117,31 @@ const Services = () => {
                       {service.duration}
                     </div>
                   </div>
-                  
-                  <p className="text-gray-700 mb-4">
-                    {service.description}
-                  </p>
-                  
+
+                  <p className="text-gray-700 mb-4">{service.description}</p>
+
                   <p className="text-blue-600 font-medium mb-6">
                     {service.ideal}
                   </p>
-                  
+
                   <ul className="space-y-3 mb-8">
                     {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start space-x-3">
+                      <li
+                        key={featureIndex}
+                        className="flex items-start space-x-3"
+                      >
                         <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
                         <span className="text-gray-700 text-sm">{feature}</span>
                       </li>
                     ))}
                   </ul>
-                  
+
                   <Link
                     to="/contact"
                     className={`block w-full text-center py-3 px-6 rounded-lg font-semibold transition-colors duration-200 ${
                       service.featured
-                        ? 'bg-blue-600 text-white hover:bg-blue-700'
-                        : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                        ? "bg-blue-600 text-white hover:bg-blue-700"
+                        : "bg-gray-100 text-gray-900 hover:bg-gray-200"
                     }`}
                   >
                     Get Started
@@ -148,32 +161,42 @@ const Services = () => {
               Additional Support Services
             </h2>
             <p className="text-xl text-gray-600">
-              GDPR made simple for your staff, with custom processes and guidance.
+              GDPR made simple for your staff, with custom processes and
+              guidance.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-xl shadow-sm">
               <Users className="h-8 w-8 text-blue-600 mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Staff Training</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Staff Training
+              </h3>
               <p className="text-gray-600">
-                Comprehensive GDPR training sessions tailored to your team's needs and responsibilities.
+                Comprehensive GDPR training sessions tailored to your team's
+                needs and responsibilities.
               </p>
             </div>
 
             <div className="bg-white p-6 rounded-xl shadow-sm">
               <FileCheck className="h-8 w-8 text-blue-600 mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Policy Development</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Policy Development
+              </h3>
               <p className="text-gray-600">
-                Custom privacy policies, data processing procedures, and compliance documentation.
+                Custom privacy policies, data processing procedures, and
+                compliance documentation.
               </p>
             </div>
 
             <div className="bg-white p-6 rounded-xl shadow-sm">
               <Shield className="h-8 w-8 text-blue-600 mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Incident Response</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Incident Response
+              </h3>
               <p className="text-gray-600">
-                24/7 support for data breach incidents and regulatory notification requirements.
+                24/7 support for data breach incidents and regulatory
+                notification requirements.
               </p>
             </div>
           </div>
@@ -187,7 +210,8 @@ const Services = () => {
             Not Sure Where to Start?
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Book a free 30-minute discovery call to clarify your needs and find the right solution for your business.
+            Book a free 30-minute discovery call to clarify your needs and find
+            the right solution for your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
