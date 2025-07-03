@@ -15,9 +15,7 @@ const TermsOfService = () => {
             These terms govern your use of our website and services. Please read
             them carefully.
           </p>
-          <p className="text-sm text-blue-200 mt-4">
-            Last updated: January 2025
-          </p>
+          <p className="text-sm text-blue-200 mt-4">Last updated: July 2025</p>
         </div>
       </section>
 
