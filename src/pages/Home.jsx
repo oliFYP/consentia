@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import {
   Shield,
   CheckCircle,
@@ -14,6 +16,12 @@ import {
 } from "lucide-react";
 
 const Home = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+  }, []);
   const benefits = [
     {
       icon: <Shield className="h-6 w-6" />,
@@ -114,29 +122,38 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+              <h1
+                data-aos="fade-down"
+                className="text-4xl lg:text-6xl font-bold mb-6 leading-tight"
+              >
                 Take Control of Your
                 <span className="text-blue-300"> Data Protection</span>
               </h1>
-              <p className="text-xl lg:text-2xl mb-8 text-blue-100 leading-relaxed">
+              <p
+                data-aos="fade-down"
+                className="text-xl lg:text-2xl mb-8 text-blue-100 leading-relaxed"
+              >
                 At Consentia Data Protection, our mission is to help businesses
                 take control of their data protection obligations with clarity
                 and confidence.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
+                  data-aos="zoom-in"
                   to="/services"
                   className="bg-green-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-600 transition-colors duration-200 text-center shadow-lg"
                 >
                   DPO Starter Pack 3 Days/Month
                 </Link>
                 <Link
+                  data-aos="zoom-in"
                   to="/contact"
                   className="bg-white text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition-colors duration-200 text-center"
                 >
                   Free 30-min Consultation
                 </Link>
                 <Link
+                  data-aos="zoom-in"
                   to="/services"
                   className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-colors duration-200 text-center"
                 >
@@ -144,7 +161,7 @@ const Home = () => {
                 </Link>
               </div>
             </div>
-            <div className="flex justify-center">
+            <div data-aos="zoom-in" className="flex justify-center">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-md">
                 <Shield className="h-24 w-24 text-blue-300 mx-auto mb-6" />
                 <div className="text-center">
@@ -163,7 +180,7 @@ const Home = () => {
       {/* Who We Support - Completely Redesigned */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div data-aos="fade-up" className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               Who We <span className="text-blue-600">Empower</span>
             </h2>
@@ -177,7 +194,7 @@ const Home = () => {
           {/* Client Types Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
             {clientTypes.map((client, index) => (
-              <div key={index} className="group relative">
+              <div data-aos="zoom-in" key={index} className="group relative">
                 <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                   <div
                     className={`absolute inset-0 bg-gradient-to-r ${client.gradient} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}
@@ -231,7 +248,7 @@ const Home = () => {
 
           {/* What We Help You Achieve */}
           <div className="bg-white rounded-3xl p-12 shadow-xl">
-            <div className="text-center mb-12">
+            <div data-aos="fade-up" className="text-center mb-12">
               <h3 className="text-3xl font-bold text-gray-900 mb-4">
                 What We Help You Achieve
               </h3>
@@ -244,6 +261,7 @@ const Home = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {benefits.map((benefit, index) => (
                 <div
+                  data-aos="zoom-in"
                   key={index}
                   className="flex items-start space-x-4 p-6 rounded-xl bg-gray-50 hover:bg-blue-50 transition-colors duration-200"
                 >
@@ -266,7 +284,7 @@ const Home = () => {
       {/* Philosophy Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div data-aos="fade-up" className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               Our Philosophy
             </h2>
@@ -284,7 +302,11 @@ const Home = () => {
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {services.map((service, index) => (
-                    <div key={index} className="bg-blue-800/50 p-4 rounded-lg">
+                    <div
+                      data-aos="zoom-in"
+                      key={index}
+                      className="bg-blue-800/50 p-4 rounded-lg"
+                    >
                       <h4 className="font-semibold mb-2">{service.title}</h4>
                       <p className="text-blue-200 text-sm">
                         {service.description}
@@ -294,7 +316,10 @@ const Home = () => {
                 </div>
               </div>
               <div className="text-center">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+                <div
+                  data-aos="zoom-in"
+                  className="bg-white/10 backdrop-blur-sm rounded-xl p-8"
+                >
                   <h3 className="text-3xl font-bold mb-4">You handle data.</h3>
                   <h3 className="text-3xl font-bold mb-4 text-blue-300">
                     We protect it.
@@ -312,14 +337,20 @@ const Home = () => {
       {/* CTA Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+          <h2
+            data-aos="fade-up"
+            className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6"
+          >
             Ready to Transform Your Data Protection?
           </h2>
-          <p className="text-xl text-gray-600 mb-8">
+          <p data-aos="fade-up" className="text-xl text-gray-600 mb-8">
             Don't let GDPR compliance slow down your growth. Let's discuss how
             we can help you build trust through proper data protection.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div
+            data-aos="zoom-in"
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
             <Link
               to="/contact"
               className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors duration-200 inline-flex items-center justify-center space-x-2"
