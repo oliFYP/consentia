@@ -1,13 +1,21 @@
-import React, { useState } from 'react';
-import { Mail, Phone, Calendar, CheckCircle, Clock, Users } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { Mail, Phone, Calendar, CheckCircle, Clock, Users } from "lucide-react";
 
 const Contact = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+  }, []);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    message: '',
-    service: ''
+    name: "",
+    email: "",
+    company: "",
+    message: "",
+    service: "",
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -21,7 +29,7 @@ const Contact = () => {
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -31,52 +39,54 @@ const Contact = () => {
       title: "Email Us",
       details: "consentiagdpr@gmail.com",
       description: "Send us a message and we'll respond within 24 hours",
-      action: "mailto:consentiagdpr@gmail.com"
+      action: "mailto:consentiagdpr@gmail.com",
     },
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Call Us",
       details: "+44 7404 790439",
       description: "Speak directly with our GDPR experts",
-      action: "tel:+447404790439"
+      action: "tel:+447404790439",
     },
     {
       icon: <Calendar className="h-6 w-6" />,
       title: "Free Consultation",
       details: "30-minute discovery call",
       description: "Book a free consultation to discuss your needs",
-      action: "#consultation"
-    }
+      action: "#consultation",
+    },
   ];
 
   const reasons = [
     {
       icon: <Clock className="h-6 w-6" />,
       title: "Quick Response",
-      description: "We respond to all inquiries within 24 hours"
+      description: "We respond to all inquiries within 24 hours",
     },
     {
       icon: <Users className="h-6 w-6" />,
       title: "Expert Team",
-      description: "Speak directly with qualified GDPR specialists"
+      description: "Speak directly with qualified GDPR specialists",
     },
     {
       icon: <CheckCircle className="h-6 w-6" />,
       title: "No Obligation",
-      description: "Free consultation with no strings attached"
-    }
+      description: "Free consultation with no strings attached",
+    },
   ];
 
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20">
+      <section
+        data-aos="fade-down"
+        className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-            Get In Touch
-          </h1>
+          <h1 className="text-4xl lg:text-5xl font-bold mb-6">Get In Touch</h1>
           <p className="text-xl lg:text-2xl text-blue-100 max-w-3xl mx-auto">
-            Send a message or email to take an appointment. We're here to help you navigate GDPR compliance with confidence.
+            Send a message or email to take an appointment. We're here to help
+            you navigate GDPR compliance with confidence.
           </p>
         </div>
       </section>
@@ -86,22 +96,20 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {contactMethods.map((method, index) => (
-              <div key={index} className="text-center">
+              <div data-aos="zoom-in" key={index} className="text-center">
                 <div className="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   {method.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   {method.title}
                 </h3>
-                <a 
+                <a
                   href={method.action}
                   className="text-blue-600 font-medium text-lg hover:text-blue-700 transition-colors"
                 >
                   {method.details}
                 </a>
-                <p className="text-gray-600 mt-2">
-                  {method.description}
-                </p>
+                <p className="text-gray-600 mt-2">{method.description}</p>
               </div>
             ))}
           </div>
@@ -111,18 +119,24 @@ const Contact = () => {
       {/* Contact Form & Info */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div
+            data-aos="zoom-in"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12"
+          >
             {/* Contact Form */}
             <div className="bg-white rounded-2xl shadow-lg p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
                 Send Us a Message
               </h2>
-              
+
               {!isSubmitted ? (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-medium text-gray-700 mb-2"
+                      >
                         Full Name *
                       </label>
                       <input
@@ -136,9 +150,12 @@ const Contact = () => {
                         placeholder="Your full name"
                       />
                     </div>
-                    
+
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-medium text-gray-700 mb-2"
+                      >
                         Email Address *
                       </label>
                       <input
@@ -153,9 +170,12 @@ const Contact = () => {
                       />
                     </div>
                   </div>
-                  
+
                   <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="company"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Company Name
                     </label>
                     <input
@@ -168,9 +188,12 @@ const Contact = () => {
                       placeholder="Your company name"
                     />
                   </div>
-                  
+
                   <div>
-                    <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="service"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Service Interest
                     </label>
                     <select
@@ -188,9 +211,12 @@ const Contact = () => {
                       <option value="other">Other</option>
                     </select>
                   </div>
-                  
+
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Message *
                     </label>
                     <textarea
@@ -204,7 +230,7 @@ const Contact = () => {
                       placeholder="Tell us about your GDPR compliance needs..."
                     />
                   </div>
-                  
+
                   <button
                     type="submit"
                     className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors duration-200"
@@ -219,7 +245,8 @@ const Contact = () => {
                     Message Sent Successfully!
                   </h3>
                   <p className="text-gray-600 mb-6">
-                    Thank you for contacting us. We'll get back to you within 24 hours.
+                    Thank you for contacting us. We'll get back to you within 24
+                    hours.
                   </p>
                   <button
                     onClick={() => setIsSubmitted(false)}
@@ -233,13 +260,20 @@ const Contact = () => {
 
             {/* Contact Information */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              <h2
+                data-aos="fade-down"
+                className="text-2xl font-bold text-gray-900 mb-6"
+              >
                 Why Choose Consentia?
               </h2>
-              
+
               <div className="space-y-6 mb-8">
                 {reasons.map((reason, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+                  <div
+                    data-aos="zoom-in"
+                    key={index}
+                    className="flex items-start space-x-4"
+                  >
                     <div className="bg-blue-100 text-blue-600 p-2 rounded-lg">
                       {reason.icon}
                     </div>
@@ -247,20 +281,19 @@ const Contact = () => {
                       <h3 className="font-semibold text-gray-900 mb-1">
                         {reason.title}
                       </h3>
-                      <p className="text-gray-600">
-                        {reason.description}
-                      </p>
+                      <p className="text-gray-600">{reason.description}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="bg-blue-50 rounded-xl p-6">
+              <div data-aos="zoom-in" className="bg-blue-50 rounded-xl p-6">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">
                   Ready to Get Started?
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  Book a free 30-minute discovery call to discuss your specific GDPR compliance needs and learn how we can help your business.
+                  Book a free 30-minute discovery call to discuss your specific
+                  GDPR compliance needs and learn how we can help your business.
                 </p>
                 <div className="space-y-3">
                   <a
@@ -286,12 +319,16 @@ const Contact = () => {
 
       {/* CTA Section */}
       <section className="py-20 bg-blue-900 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div
+          data-aos="zoom-in"
+          className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+        >
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">
             Don't Let GDPR Compliance Hold You Back
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Contact us today and discover how easy GDPR compliance can be with the right partner by your side.
+            Contact us today and discover how easy GDPR compliance can be with
+            the right partner by your side.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
