@@ -80,7 +80,10 @@ const Services = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20">
+      <section
+        data-aos="fade-down"
+        className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">
             Our GDPR & Data Protection Services
@@ -99,6 +102,7 @@ const Services = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div
+                data-aos="zoom-in"
                 key={index}
                 className={`relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden ${
                   service.featured ? "ring-2 ring-blue-500" : ""
@@ -164,7 +168,7 @@ const Services = () => {
       {/* Additional Services */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div data-aos="fade-down" className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               Additional Support Services
             </h2>
@@ -175,7 +179,10 @@ const Services = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-xl shadow-sm">
+            <div
+              data-aos="zoom-in"
+              className="bg-white p-6 rounded-xl shadow-sm"
+            >
               <Users className="h-8 w-8 text-blue-600 mb-4" />
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 Staff Training
@@ -186,7 +193,10 @@ const Services = () => {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-xl shadow-sm">
+            <div
+              data-aos="zoom-in"
+              className="bg-white p-6 rounded-xl shadow-sm"
+            >
               <FileCheck className="h-8 w-8 text-blue-600 mb-4" />
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 Policy Development
@@ -197,7 +207,10 @@ const Services = () => {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-xl shadow-sm">
+            <div
+              data-aos="zoom-in"
+              className="bg-white p-6 rounded-xl shadow-sm"
+            >
               <Shield className="h-8 w-8 text-blue-600 mb-4" />
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 Incident Response
@@ -213,7 +226,10 @@ const Services = () => {
 
       {/* CTA Section */}
       <section className="py-20 bg-blue-900 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div
+          data-aos="zoom-in"
+          className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+        >
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">
             Not Sure Where to Start?
           </h2>

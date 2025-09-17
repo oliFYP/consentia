@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { FileText, Scale, Shield, AlertTriangle, Mail } from "lucide-react";
 
 const TermsOfService = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+  }, []);
   return (
     <div>
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div
+          data-aos="fade-down"
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+        >
           <Scale className="h-16 w-16 text-blue-300 mx-auto mb-6" />
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">
             Terms of Service
@@ -24,7 +35,7 @@ const TermsOfService = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg max-w-none">
             {/* Introduction */}
-            <div className="mb-12">
+            <div data-aos="fade-down" className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
                 <FileText className="h-6 w-6 text-blue-600 mr-2" />
                 Agreement to Terms
@@ -39,7 +50,7 @@ const TermsOfService = () => {
             </div>
 
             {/* Services Description */}
-            <div className="mb-12">
+            <div data-aos="fade-down" className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
                 <Shield className="h-6 w-6 text-blue-600 mr-2" />
                 Our Services
@@ -57,7 +68,7 @@ const TermsOfService = () => {
             </div>
 
             {/* Acceptance and Eligibility */}
-            <div className="mb-12">
+            <div data-aos="fade-down" className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 Acceptance and Eligibility
               </h2>
@@ -77,7 +88,7 @@ const TermsOfService = () => {
             </div>
 
             {/* Service Terms */}
-            <div className="mb-12">
+            <div data-aos="fade-down" className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 Service Terms
               </h2>
@@ -114,7 +125,7 @@ const TermsOfService = () => {
             </div>
 
             {/* Payment Terms */}
-            <div className="mb-12">
+            <div data-aos="fade-down" className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 Payment Terms
               </h2>
@@ -130,7 +141,7 @@ const TermsOfService = () => {
             </div>
 
             {/* Confidentiality */}
-            <div className="mb-12">
+            <div data-aos="fade-down" className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 Confidentiality
               </h2>
@@ -152,7 +163,7 @@ const TermsOfService = () => {
             </div>
 
             {/* Limitations and Disclaimers */}
-            <div className="mb-12">
+            <div data-aos="fade-down" className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
                 <AlertTriangle className="h-6 w-6 text-amber-600 mr-2" />
                 Limitations and Disclaimers
@@ -188,7 +199,7 @@ const TermsOfService = () => {
             </div>
 
             {/* Intellectual Property */}
-            <div className="mb-12">
+            <div data-aos="fade-down" className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 Intellectual Property
               </h2>
@@ -207,7 +218,7 @@ const TermsOfService = () => {
             </div>
 
             {/* Termination */}
-            <div className="mb-12">
+            <div data-aos="fade-down" className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 Termination
               </h2>
@@ -226,7 +237,7 @@ const TermsOfService = () => {
             </div>
 
             {/* Governing Law */}
-            <div className="mb-12">
+            <div data-aos="fade-down" className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 Governing Law
               </h2>
@@ -238,7 +249,7 @@ const TermsOfService = () => {
             </div>
 
             {/* Changes to Terms */}
-            <div className="mb-12">
+            <div data-aos="fade-down" className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 Changes to Terms
               </h2>
@@ -251,7 +262,7 @@ const TermsOfService = () => {
             </div>
 
             {/* Contact Information */}
-            <div className="mb-12">
+            <div data-aos="fade-down" className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
                 <Mail className="h-6 w-6 text-blue-600 mr-2" />
                 Contact Information
