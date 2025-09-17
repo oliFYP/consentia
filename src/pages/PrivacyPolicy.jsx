@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Shield, Lock, Eye, FileText, Mail } from "lucide-react";
 
 const PrivacyPolicy = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+  }, []);
   return (
     <div>
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div
+          data-aos="fade-down"
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+        >
           <Shield className="h-16 w-16 text-blue-300 mx-auto mb-6" />
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">
             Privacy Policy
@@ -21,7 +32,10 @@ const PrivacyPolicy = () => {
 
       {/* Content */}
       <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          data-aos="fade-down"
+          className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
+        >
           <div className="prose prose-lg max-w-none">
             {/* Introduction */}
             <div className="mb-12">
@@ -38,7 +52,7 @@ const PrivacyPolicy = () => {
             </div>
 
             {/* Information We Collect */}
-            <div className="mb-12">
+            <div data-aos="fade-down" className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
                 <Eye className="h-6 w-6 text-blue-600 mr-2" />
                 Information We Collect
@@ -77,7 +91,7 @@ const PrivacyPolicy = () => {
             </div>
 
             {/* How We Use Information */}
-            <div className="mb-12">
+            <div data-aos="fade-down" className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
                 <Lock className="h-6 w-6 text-blue-600 mr-2" />
                 How We Use Your Information
@@ -95,7 +109,7 @@ const PrivacyPolicy = () => {
             </div>
 
             {/* Legal Basis for Processing */}
-            <div className="mb-12">
+            <div data-aos="fade-down" className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 Legal Basis for Processing
               </h2>
@@ -123,7 +137,7 @@ const PrivacyPolicy = () => {
             </div>
 
             {/* Information Sharing */}
-            <div className="mb-12">
+            <div data-aos="fade-down" className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 Information Sharing and Disclosure
               </h2>
@@ -144,7 +158,7 @@ const PrivacyPolicy = () => {
             </div>
 
             {/* Data Security */}
-            <div className="mb-12">
+            <div data-aos="fade-down" className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 Data Security
               </h2>
@@ -157,7 +171,7 @@ const PrivacyPolicy = () => {
             </div>
 
             {/* Your Rights */}
-            <div className="mb-12">
+            <div data-aos="fade-down" className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 Your Rights Under GDPR
               </h2>
@@ -197,7 +211,7 @@ const PrivacyPolicy = () => {
             </div>
 
             {/* Data Retention */}
-            <div className="mb-12">
+            <div data-aos="fade-down" className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 Data Retention
               </h2>
@@ -210,7 +224,7 @@ const PrivacyPolicy = () => {
             </div>
 
             {/* Cookies */}
-            <div className="mb-12">
+            <div data-aos="fade-down" className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 Cookies and Tracking
               </h2>
@@ -222,7 +236,7 @@ const PrivacyPolicy = () => {
             </div>
 
             {/* Contact Information */}
-            <div className="mb-12">
+            <div data-aos="fade-down" className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
                 <Mail className="h-6 w-6 text-blue-600 mr-2" />
                 Contact Us
@@ -246,7 +260,7 @@ const PrivacyPolicy = () => {
             </div>
 
             {/* Updates */}
-            <div className="mb-12">
+            <div data-aos="fade-down" className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 Policy Updates
               </h2>
