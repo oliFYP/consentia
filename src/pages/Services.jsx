@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import {
   Shield,
@@ -11,6 +13,12 @@ import {
 } from "lucide-react";
 
 const Services = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+  }, []);
   const services = [
     {
       icon: <Shield className="h-12 w-12" />,
