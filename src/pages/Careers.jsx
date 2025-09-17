@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import {
   Users,
@@ -13,6 +15,12 @@ import {
 } from "lucide-react";
 
 const Careers = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+  }, []);
   const benefits = [
     {
       icon: <Clock className="h-6 w-6" />,
@@ -128,23 +136,31 @@ const Careers = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+              <h1
+                data-aos="fade-down"
+                className="text-4xl lg:text-5xl font-bold mb-6 leading-tight"
+              >
                 Join Our Mission to
                 <span className="text-blue-300"> Simplify GDPR</span>
               </h1>
-              <p className="text-xl lg:text-2xl text-blue-100 leading-relaxed mb-8">
+              <p
+                data-aos="fade-down"
+                className="text-xl lg:text-2xl text-blue-100 leading-relaxed mb-8"
+              >
                 Help businesses turn compliance into a competitive advantage.
                 Join a team that's passionate about making data protection
                 accessible and practical.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
+                  data-aos="zoom-in"
                   href="#positions"
                   className="bg-green-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-600 transition-colors duration-200 text-center"
                 >
                   View Open Positions
                 </a>
                 <Link
+                  data-aos="zoom-in"
                   to="/contact"
                   className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-colors duration-200 text-center"
                 >
@@ -153,7 +169,10 @@ const Careers = () => {
               </div>
             </div>
             <div className="flex justify-center">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+              <div
+                data-aos="zoom-in"
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8"
+              >
                 <Users className="h-24 w-24 text-blue-300 mx-auto mb-6" />
                 <div className="text-center">
                   <h3 className="text-2xl font-semibold mb-4">
@@ -173,7 +192,7 @@ const Careers = () => {
       {/* Our Values */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div data-aos="fade-down" className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               Our Values
             </h2>
@@ -183,9 +202,13 @@ const Careers = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            data-aos="zoom-in"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          >
             {values.map((value, index) => (
               <div
+                data-aos="zoom-in"
                 key={index}
                 className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200"
               >
@@ -204,7 +227,7 @@ const Careers = () => {
       {/* Benefits */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div data-aos="fade-down" className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               Why You'll Love Working Here
             </h2>
@@ -216,7 +239,7 @@ const Careers = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
-              <div key={index} className="text-center">
+              <div data-aos="zoom-in" key={index} className="text-center">
                 <div className="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   {benefit.icon}
                 </div>
@@ -233,7 +256,7 @@ const Careers = () => {
       {/* Open Positions */}
       <section id="positions" className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div data-aos="fade-down" className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               Open Positions
             </h2>
@@ -251,7 +274,10 @@ const Careers = () => {
               >
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                   <div className="lg:col-span-2">
-                    <div className="flex flex-wrap items-center gap-4 mb-4">
+                    <div
+                      data-aos="fade-down"
+                      className="flex flex-wrap items-center gap-4 mb-4"
+                    >
                       <h3 className="text-2xl font-bold text-gray-900">
                         {position.title}
                       </h3>
@@ -260,16 +286,25 @@ const Careers = () => {
                       </span>
                     </div>
 
-                    <div className="flex items-center text-gray-600 mb-4">
+                    <div
+                      data-aos="fade-down"
+                      className="flex items-center text-gray-600 mb-4"
+                    >
                       <MapPin className="h-4 w-4 mr-2" />
                       <span>{position.location}</span>
                     </div>
 
-                    <p className="text-gray-700 mb-6 leading-relaxed">
+                    <p
+                      data-aos="fade-down"
+                      className="text-gray-700 mb-6 leading-relaxed"
+                    >
                       {position.description}
                     </p>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div
+                      data-aos="fade-down"
+                      className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                    >
                       <div>
                         <h4 className="font-semibold text-gray-900 mb-3">
                           Requirements:
@@ -287,7 +322,7 @@ const Careers = () => {
                         </ul>
                       </div>
 
-                      <div>
+                      <div data-aos="fade-down">
                         <h4 className="font-semibold text-gray-900 mb-3">
                           Key Responsibilities:
                         </h4>
@@ -307,7 +342,10 @@ const Careers = () => {
                   </div>
 
                   <div className="lg:col-span-1">
-                    <div className="bg-gray-50 rounded-xl p-6 h-full flex flex-col justify-between">
+                    <div
+                      data-aos="zoom-in"
+                      className="bg-gray-50 rounded-xl p-6 h-full flex flex-col justify-between"
+                    >
                       <div>
                         <h4 className="font-semibold text-gray-900 mb-4">
                           Ready to Apply?
@@ -335,7 +373,10 @@ const Careers = () => {
 
       {/* Don't See Your Role */}
       <section className="py-20 bg-blue-900 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div
+          data-aos="zoom-in"
+          className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+        >
           <Briefcase className="h-16 w-16 text-blue-300 mx-auto mb-8" />
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">
             Don't See Your Perfect Role?
@@ -366,7 +407,7 @@ const Careers = () => {
       {/* Application Process */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div data-aos="fade-down" className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               Our Application Process
             </h2>
@@ -376,7 +417,7 @@ const Careers = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="text-center">
+            <div data-aos="zoom-in" className="text-center">
               <div className="bg-blue-100 text-blue-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
                 1
               </div>
@@ -388,7 +429,7 @@ const Careers = () => {
               </p>
             </div>
 
-            <div className="text-center">
+            <div data-aos="zoom-in" className="text-center">
               <div className="bg-blue-100 text-blue-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
                 2
               </div>
@@ -400,7 +441,7 @@ const Careers = () => {
               </p>
             </div>
 
-            <div className="text-center">
+            <div data-aos="zoom-in" className="text-center">
               <div className="bg-blue-100 text-blue-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
                 3
               </div>
@@ -412,7 +453,7 @@ const Careers = () => {
               </p>
             </div>
 
-            <div className="text-center">
+            <div data-aos="zoom-in" className="text-center">
               <div className="bg-blue-100 text-blue-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
                 4
               </div>
